@@ -1,3 +1,5 @@
+## NO
+
 I've always been a fan of the unix command 'yes'. 
 
 So I decided to create no which does the opposite. 
