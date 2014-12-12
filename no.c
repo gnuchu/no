@@ -2,11 +2,9 @@
 #include <string.h>
 #include <stdlib.h>
 
-#define INPUT_STRING 20
-
 int main(int argc, char *argv[])	{
 
-  char * message = calloc(INPUT_STRING, sizeof(char));
+  char * message = calloc(argc+1, sizeof(char));
 
   if(argc>1) {
 		strcpy(message, argv[1]);

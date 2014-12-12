@@ -4,9 +4,10 @@ all: no
 
 no: no.o
 	$(CC) no.o -o no
+	rm -rf *.o
 
-no.o: no.c
+no.o: clean no.c
 	$(CC) -c no.c
 
 clean:
-	rm -rf *o no
+	rm -rf *.o no
