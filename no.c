@@ -1,25 +1,48 @@
+#include <ctype.h>
 #include <stdio.h>
-#include <string.h>
 #include <stdlib.h>
+#include <unistd.h>
+#include <string.h>
 
-int main(int argc, char *argv[])	{
+#define VERSION 5
 
-  char * message = calloc(argc+1, sizeof(char));
+int main(int argc, char **argv)	{
 
-  if(argc>1) {
-		strcpy(message, argv[1]);
+  int vflag = 0;
+  int c;
+
+  char *message = calloc(argc+1, sizeof(char));
+
+  while ((c = getopt (argc, argv, "v")) != -1) {
+    switch(c) {
+      case 'v':
+        vflag = 1;
+        break;
+    }
   }
-	else {
-		strcpy(message, "n\0");
-	}
 
-  while(1)	{
-    if(argc>1) {
-	  	printf("%s\n", message);
-		}
-		else {
-	  	printf("n\n");
-		}
+  if (vflag == 1) {
+    printf("Version is: %d\n", VERSION);
+    exit(0);
   } 
+  else {
+    if(argc>1 && !vflag) {
+      strcpy(message, argv[1]);
+    }
+    else {
+      strcpy(message, "n\0");
+    }
+
+    while(1)  {
+      if(argc>1) {
+        printf("%s\n", message);
+      }
+      else {
+        printf("n\n");
+      }
+    } 
+
+  }
+
   return 0; 
 }

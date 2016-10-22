@@ -1,6 +1,7 @@
-CC?=gcc
+CC=clang
+PERL=/usr/bin/perl
 
-all: no
+all: version no
 
 no: no.o
 	$(CC) no.o -o no
@@ -9,6 +10,9 @@ no: no.o
 
 no.o: clean no.c
 	$(CC) -c no.c
+
+version: 
+	$(PERL) version_bumper.pl no.c
 
 clean:
 	rm -rf *.o no
