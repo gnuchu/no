@@ -33,7 +33,7 @@ my $data;
 
 close $fh;
 
-$data =~ s/#define VERSION ./$replacement_line/g;
+$data =~ s/#define VERSION .+/$replacement_line/g;
 
 open $fh, ">", $abs_path || die ("Couldn't open file $file");
 print $fh $data;
