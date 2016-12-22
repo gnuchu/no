@@ -4,7 +4,7 @@
 #include <unistd.h>
 #include <string.h>
 
-#define VERSION 9
+#define VERSION 11
 
 int main(int argc, char **argv)	{
 
@@ -22,7 +22,7 @@ int main(int argc, char **argv)	{
   }
 
   if (vflag == 1) {
-    printf("Version is: %d\n", VERSION);
+    printf("%d\n", VERSION);
     exit(0);
   } 
   else {

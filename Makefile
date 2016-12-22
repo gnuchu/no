@@ -16,3 +16,7 @@ version:
 
 clean:
 	rm -rf *.o no
+package: no
+	mkdir -p build
+	tar cvzf build/no-package.tgz ./no
+
