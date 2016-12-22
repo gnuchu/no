@@ -4,10 +4,10 @@ node {
   stage('Build') {
     checkout scm
     sh 'make'
-    input message: 'OK to proceed?', submitter: 'notadmin'
+    input message: 'OK to proceed?', submitter: 'admin'
   }
   stage('Test') {
-    echo 'Still go #TODO the tests.'
+    echo 'Still got #TODO the tests.'
     input message: 'OK to proceed?', submitter: 'admin'
   }
   stage('Package') {
