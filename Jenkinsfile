@@ -8,5 +8,6 @@ node {
   stage('Package') {
     checkout scm
     sh 'make package'
+    archiveArtifacts artifacts:'build/no-package.tgz'
   }
 }
