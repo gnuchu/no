@@ -4,7 +4,7 @@ node {
   stage('Build') {
     checkout scm
     sh 'make'
-    input message: 'OK to proceed?', submitter: 'admin'
+    input message: 'OK to proceed?', submitter: 'notadmin'
   }
   stage('Test') {
     echo 'Still go #TODO the tests.'
