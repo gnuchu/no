@@ -2,7 +2,7 @@
 
 node {
   def myVal = "Hello, World!"
-  sh "Value of myVal is: ${myVal}"
+  sh "echo ${myVal}"
 
 
   stage('Build') {
