@@ -2,9 +2,9 @@
 
 node {
   def myVal = "Hello, World!"
-  bat "Value of myVal is: ${myVal}"
+  sh "Value of myVal is: ${myVal}"
 
-  
+
   stage('Build') {
     checkout scm
     sh 'make'
