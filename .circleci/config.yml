@@ -3,11 +3,11 @@ jobs:
   build:
     docker:
       - image: ubuntu:16.04
+    dependencies:
+      pre:
+        - sudo apt-get update; sudo apt-get -y install build-essential libtool automake pkg-config git wget gettext-base
     steps:
       - checkout
-      - run:
-          name: Install build esential
-          command: sudo apt-get update && apt-get -y install build-essential
       - run:
           name: Make
           command: make
