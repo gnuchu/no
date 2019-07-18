@@ -1,5 +1,6 @@
 require 'os'
 require 'bundler'
+require 'pry'
 
 Bundler.require
 
@@ -26,7 +27,8 @@ def build
   version
   clean
   compile
-  link
+  binding.pry
+  linker
 end
 
 def version
@@ -44,7 +46,11 @@ def compile
   runCmd(cmd)
 end
 
-def link
+def linker
+  if $debug
+    puts "In Link"
+  end
+
   cmd = "#{GCC} -o no no.o"
   runCmd(cmd)
 
@@ -61,7 +67,12 @@ def runCmd(cmd)
     puts "About to run command: #{cmd}"
   end
 
-  system("#{cmd}")
+  begin
+    system("#{cmd}")
+  rescue => e
+    puts e.message
+    puts e.backtrace.inspect
+  end
 
   if $debug
     puts "Command completed with status: #{$@}"
