@@ -27,7 +27,6 @@ def build
   version
   clean
   compile
-  binding.pry
   linker
 end
 
