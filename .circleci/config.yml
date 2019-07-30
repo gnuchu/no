@@ -6,7 +6,7 @@ jobs:
     steps:
       - run: 
           name: Apt Update
-          command: 'sudo apt-get update; sudo apt-get -y install build-essential libtool automake pkg-config git wget gettext-base'
+          command: '/usr/bin/sudo sudo apt-get update; /usr/bin/sudo sudo apt-get -y install build-essential libtool automake pkg-config git wget gettext-base'
       - run:
           name: Make
           command: make
