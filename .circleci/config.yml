@@ -5,9 +5,5 @@ jobs:
       - image: ubuntu:16.04
     steps:
       - checkout
-      - update:
-      - run:
-          name: update
-          command: sudo apt-get update; sudo apt-get -y install build-essential libtool automake pkg-config git wget gettext-base
-          name: Make
-          command: make
+      - run: sudo apt-get update; sudo apt-get -y install build-essential libtool automake pkg-config git wget gettext-base
+      - run: make
