@@ -4,7 +4,7 @@
 #include <unistd.h>
 #include <string.h>
 
-#define VERSION 39
+#define VERSION 40
 
 int main(int argc, char **argv)	{
 
